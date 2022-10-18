@@ -19,7 +19,7 @@ jobs:
             >&2 echo "Error connecting to Meshery Cloud"
             >&2 echo "$(<err.txt)"
           fi
-          echo $catalogPatterns > temp.json
+          echo "$catalogPatterns" > temp.json
           patternCount=$(jq length temp.json)
           if [[ "$patternCount" == "" ]]; then
             patternCount=0
@@ -83,7 +83,7 @@ jobs:
             >&2 echo "$(<err.txt)"
           fi
 
-          echo $catalogFilters > temp.json
+          echo "$catalogFilters" > temp.json
           filterCount=$(jq length temp.json)
           if [[ "$filterCount" == "" ]]; then
             filterCount=0
